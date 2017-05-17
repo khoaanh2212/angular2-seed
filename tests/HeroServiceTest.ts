@@ -40,9 +40,9 @@ describe("HeroService", () => {
 	})
 	describe("post call", ()=>{
 		it("should post and return", (done) =>{
-			const testHero:Hero={id: 11, name: 'Mr. Nice'};
+			const testHero:Hero= <Hero>{name: 'Mr. Nice'};
 			sut.savedHero((hero:Hero) => {
-				expect(hero).to.eql(testHero);
+				expect(hero.name).to.eql(testHero.name);
 				done();
 			});
 			sut.saveHero(testHero);
